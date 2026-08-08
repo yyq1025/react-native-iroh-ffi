@@ -74,7 +74,8 @@
     "react-native": "0.85.0",
     "react-native-builder-bob": "^0.43.0",
     "turbo": "^2.9.16",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "uniffi-bindgen-react-native": "^0.31.0-3"
   },
   "peerDependencies": {
     "react": "*",
@@ -114,7 +115,12 @@
     "android": {
       "javaPackageName": "com.irohspike"
     },
-    "includesGeneratedCode": true
+    "includesGeneratedCode": true,
+    "ios": {
+      "modulesProvider": {
+        "IrohSpike": "IrohSpike"
+      }
+    }
   },
   "prettier": {
     "quoteProps": "consistent",
@@ -130,5 +136,9 @@
       "eslint"
     ],
     "version": "0.63.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^8.0.0",
+    "@ubjs/core": "^0.31.0-3"
   }
 }

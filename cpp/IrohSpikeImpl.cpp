@@ -7,12 +7,12 @@ IrohSpikeImpl::IrohSpikeImpl(
 )
   : NativeIrohSpikeCxxSpec(std::move(jsInvoker)) {}
 
-double IrohSpikeImpl::multiply(
-  jsi::Runtime& rt,
-  double a,
-  double b
-) {
-  return a * b;
+bool IrohSpikeImpl::installRustCrate(jsi::Runtime& rt) {
+  return irohspike::installRustCrate(rt, jsInvoker_) != 0;
+}
+
+bool IrohSpikeImpl::cleanupRustCrate(jsi::Runtime& rt) {
+  return irohspike::cleanupRustCrate(rt) != 0;
 }
 
 }
