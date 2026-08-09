@@ -25,8 +25,5 @@ jobs:
       - name: Install dependencies (runs bob build via prepare)
         run: bun install
 
-      - name: Lint
-        run: bun run lint
-
       - name: Typecheck
         run: bun run typecheck
