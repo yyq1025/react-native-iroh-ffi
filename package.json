@@ -34,7 +34,7 @@
   "scripts": {
     "example": "yarn workspace react-native-iroh-spike-example",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
-    "prepare": "bob build",
+    "prepare": "bob build --target codegen",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\""
   },
@@ -82,7 +82,8 @@
     "react-native": "*"
   },
   "workspaces": [
-    "example"
+    "example",
+    "example-expo"
   ],
   "packageManager": "yarn@4.11.0",
   "react-native-builder-bob": {
