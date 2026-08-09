@@ -12,9 +12,9 @@ import {
   EndpointAddr,
   EndpointId,
   type EndpointLike,
-} from 'react-native-iroh-spike';
+} from 'react-native-iroh-ffi';
 
-const ALPN = 'iroh-spike/echo/0';
+const ALPN = 'iroh-ffi/echo/0';
 // ASCII-only helpers (Hermes lacks TextDecoder)
 const toBuf = (s: string) => Uint8Array.from(s, (c) => c.charCodeAt(0)).buffer;
 const fromBuf = (b: ArrayBuffer) =>
@@ -24,7 +24,7 @@ export default function App() {
   const [status, setStatus] = useState('binding endpoint…');
   const [endpointId, setEndpointId] = useState<string | null>(null);
   const [peerId, setPeerId] = useState(
-    '46fbdd40255ca2f136838a99dd20326ba39d5c8f7a48236458ce760929f6ec3a'
+    '952ebc5e87827afe7a36ac1882ff97fd7361e32f7a6b76f737094a9d132d8aa8'
   );
   const [echoLog, setEchoLog] = useState<string[]>([]);
   const epRef = useRef<EndpointLike | null>(null);
@@ -79,7 +79,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>iroh × RN spike</Text>
+      <Text style={styles.title}>react-native-iroh-ffi</Text>
       <Text style={styles.status}>{status}</Text>
       {endpointId && <Text style={styles.id}>EndpointId: {endpointId}</Text>}
       <TextInput

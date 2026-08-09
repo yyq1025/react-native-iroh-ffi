@@ -2,12 +2,12 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "react-native-iroh-spike": ["./src/index"]
+      "react-native-iroh-ffi": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "customConditions": [
-      "react-native-iroh-spike-source",
+      "react-native-iroh-ffi-source",
       "react-native-strict-api"
     ],
     "esModuleInterop": true,

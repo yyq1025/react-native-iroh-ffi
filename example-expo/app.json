@@ -8,7 +8,7 @@
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.irohspike.example"
+      "bundleIdentifier": "com.irohffi.example"
     },
     "android": {
       "adaptiveIcon": {
@@ -18,7 +18,7 @@
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.irohspike.example"
+      "package": "com.irohffi.example"
     },
     "web": {
       "favicon": "./assets/favicon.png"

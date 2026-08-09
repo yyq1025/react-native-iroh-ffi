@@ -11,11 +11,11 @@ config.resolver.nodeModulesPaths = [
   path.join(root, 'node_modules'),
 ];
 
-// Resolve react-native-iroh-spike from its src/ via the package.json
+// Resolve react-native-iroh-ffi from its src/ via the package.json
 // exports condition (same trick as the vanilla example's monorepo config)
 config.resolver.unstable_conditionNames = [
   ...(config.resolver.unstable_conditionNames ?? []),
-  'react-native-iroh-spike-source',
+  'react-native-iroh-ffi-source',
 ];
 
 module.exports = config;

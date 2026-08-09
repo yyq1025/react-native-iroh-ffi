@@ -1,20 +1,20 @@
 #import <Foundation/Foundation.h>
-#import "IrohSpikeImpl.h"
+#import "IrohFfiImpl.h"
 #import <ReactCommon/CxxTurboModuleUtils.h>
 
-@interface IrohSpikeOnLoad : NSObject
+@interface IrohFfiOnLoad : NSObject
 @end
 
-@implementation IrohSpikeOnLoad
+@implementation IrohFfiOnLoad
 
 using namespace facebook::react;
 
 + (void)load
 {
   registerCxxModuleToGlobalModuleMap(
-    std::string(IrohSpikeImpl::kModuleName),
+    std::string(IrohFfiImpl::kModuleName),
     [](std::shared_ptr<CallInvoker> jsInvoker) {
-      return std::make_shared<IrohSpikeImpl>(jsInvoker);
+      return std::make_shared<IrohFfiImpl>(jsInvoker);
     }
   );
 }

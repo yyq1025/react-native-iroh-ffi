@@ -1,4 +1,4 @@
-name: IrohSpike
+name: IrohFfi
 rust:
   repo: https://github.com/n0-computer/iroh-ffi
   branch: v1.1.0

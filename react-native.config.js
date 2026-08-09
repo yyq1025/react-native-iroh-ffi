@@ -6,9 +6,9 @@ module.exports = {
     platforms: {
       android: {
         cmakeListsPath: 'generated/jni/CMakeLists.txt',
-        cxxModuleCMakeListsModuleName: 'react-native-iroh-spike',
+        cxxModuleCMakeListsModuleName: 'react-native-iroh-ffi',
         cxxModuleCMakeListsPath: 'CMakeLists.txt',
-        cxxModuleHeaderName: 'IrohSpikeImpl',
+        cxxModuleHeaderName: 'IrohFfiImpl',
       },
     },
   },

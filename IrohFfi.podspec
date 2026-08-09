@@ -5,7 +5,7 @@ package = JSON.parse(File.read(File.join(__dir__, "package.json")))
 folly_compiler_flags = '-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32'
 
 Pod::Spec.new do |s|
-  s.name         = "IrohSpike"
+  s.name         = "IrohFfi"
   s.version      = package["version"]
   s.summary      = package["description"]
   s.homepage     = package["homepage"]
@@ -13,10 +13,10 @@ Pod::Spec.new do |s|
   s.authors      = package["author"]
 
   s.platforms    = { :ios => min_ios_version_supported }
-  s.source       = { :git => "https://github.com/richardyang/iroh-spike.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/yyq1025/react-native-iroh-ffi.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,mm,swift}", "ios/generated/**/*.{h,m,mm}", "cpp/**/*.{hpp,cpp,c,h}", "cpp/generated/**/*.{hpp,cpp,c,h}"
-  s.vendored_frameworks = "IrohSpikeFramework.xcframework"
+  s.vendored_frameworks = "IrohFfiFramework.xcframework"
   s.frameworks    = "SystemConfiguration", "Security", "Network"
   s.libraries     = "resolv"
   s.dependency    "uniffi-bindgen-react-native", "0.31.0-3"
@@ -43,8 +43,7 @@ Pod::Spec.new do |s|
       s.dependency "ReactCommon/turbomodule/core"
     end
   end
-
-  # RN 0.85 no longer injects this define; ubrn's generated code still gates on it.
+  # RN >=0.85 no longer injects this define; ubrn's generated code still gates on it.
   # Set last so install_modules_dependencies cannot overwrite it.
   s.pod_target_xcconfig = (s.attributes_hash["pod_target_xcconfig"] || {}).merge(
     "GCC_PREPROCESSOR_DEFINITIONS" => "$(inherited) RCT_NEW_ARCH_ENABLED=1"

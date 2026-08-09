@@ -1,12 +1,12 @@
 {
-  "name": "react-native-iroh-spike",
-  "version": "0.1.0",
-  "description": "iroh over ubrn feasibility spike",
+  "name": "react-native-iroh-ffi",
+  "version": "0.1.0-alpha.1",
+  "description": "React Native bindings for the official iroh-ffi: the full iroh p2p API surface (QUIC connections, streams, relays, discovery) as a prebuilt Turbo Module \u2014 no Rust toolchain required",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
   "exports": {
     ".": {
-      "react-native-iroh-spike-source": "./src/index.tsx",
+      "react-native-iroh-ffi-source": "./src/index.tsx",
       "types": "./lib/typescript/src/index.d.ts",
       "default": "./lib/module/index.js"
     },
@@ -29,30 +29,39 @@
     "!**/__tests__",
     "!**/__fixtures__",
     "!**/__mocks__",
-    "!**/.*"
+    "!**/.*",
+    "IrohFfiFramework.xcframework"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-iroh-spike-example",
-    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
-    "prepare": "bob build --target codegen",
+    "clean": "del-cli android/build lib",
+    "prepare": "bob build",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\""
   },
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "iroh",
+    "iroh-ffi",
+    "p2p",
+    "peer-to-peer",
+    "quic",
+    "networking",
+    "hole-punching",
+    "uniffi",
+    "turbo-module",
+    "expo"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/richardyang/iroh-spike.git"
+    "url": "git+https://github.com/yyq1025/react-native-iroh-ffi.git"
   },
-  "author": "Yueqian Yang <richardyang1025@gmail.com> (https://github.com/richardyang)",
+  "author": "Yueqian Yang <richardyang1025@gmail.com> (https://github.com/yyq1025)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/richardyang/iroh-spike/issues"
+    "url": "https://github.com/yyq1025/react-native-iroh-ffi/issues"
   },
-  "homepage": "https://github.com/richardyang/iroh-spike#readme",
+  "homepage": "https://github.com/yyq1025/react-native-iroh-ffi#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -82,10 +91,8 @@
     "react-native": "*"
   },
   "workspaces": [
-    "example",
     "example-expo"
   ],
-  "packageManager": "yarn@4.11.0",
   "react-native-builder-bob": {
     "source": "src",
     "output": "lib",
@@ -106,7 +113,7 @@
     ]
   },
   "codegenConfig": {
-    "name": "IrohSpikeSpec",
+    "name": "IrohFfiSpec",
     "type": "modules",
     "jsSrcsDir": "src",
     "outputDir": {
@@ -114,12 +121,12 @@
       "android": "android/generated"
     },
     "android": {
-      "javaPackageName": "com.irohspike"
+      "javaPackageName": "com.irohffi"
     },
     "includesGeneratedCode": true,
     "ios": {
       "modulesProvider": {
-        "IrohSpike": "IrohSpike"
+        "IrohFfi": "IrohFfi"
       }
     }
   },

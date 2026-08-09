@@ -1,8 +1,8 @@
-// Desktop echo peer: accepts iroh connections on ALPN iroh-spike/echo/0,
+// Desktop echo peer: accepts iroh connections on ALPN iroh-ffi/echo/0,
 // reads one message per bi-stream, writes back `echo:<msg>`.
 import { Endpoint } from '@number0/iroh';
 
-const ALPN = Array.from(Buffer.from('iroh-spike/echo/0'));
+const ALPN = Array.from(Buffer.from('iroh-ffi/echo/0'));
 
 const b = Endpoint.builder();
 b.applyN0();
