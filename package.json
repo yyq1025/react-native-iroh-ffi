@@ -1,6 +1,6 @@
 {
   "name": "react-native-iroh-ffi",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "React Native bindings for the official iroh-ffi: the full iroh p2p API surface (QUIC connections, streams, relays, discovery) as a prebuilt Turbo Module \u2014 no Rust toolchain required",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
@@ -33,7 +33,7 @@
     "IrohFfiFramework.xcframework"
   ],
   "scripts": {
-    "clean": "del-cli android/build lib",
+    "clean": "rm -rf android/build lib",
     "prepare": "bob build",
     "typecheck": "tsc"
   },
@@ -65,15 +65,11 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@react-native-community/cli": "20.1.0",
-    "@react-native/babel-preset": "0.85.0",
     "@types/react": "^19.2.0",
-    "del-cli": "^7.0.0",
     "react": "19.2.3",
     "react-native": "0.85.0",
     "react-native-builder-bob": "^0.43.0",
-    "typescript": "^6.0.3",
-    "uniffi-bindgen-react-native": "^0.31.0-3"
+    "typescript": "^6.0.3"
   },
   "peerDependencies": {
     "react": "*",
@@ -136,6 +132,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^8.0.0",
-    "@ubjs/core": "^0.31.0-3"
+    "@ubjs/core": "^0.31.0-3",
+    "uniffi-bindgen-react-native": "^0.31.0-3"
   }
 }
