@@ -1,11 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import {
-  Pressable,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from 'react-native';
+import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import {
   EndpointBuilder,
@@ -90,11 +84,7 @@ export default function App() {
         autoCapitalize="none"
         autoCorrect={false}
       />
-      <Pressable
-        style={styles.button}
-        onPress={runEcho}
-        disabled={!endpointId}
-      >
+      <Pressable style={styles.button} onPress={runEcho} disabled={!endpointId}>
         <Text style={styles.buttonText}>Connect & Echo</Text>
       </Pressable>
       {echoLog.map((line, i) => (
