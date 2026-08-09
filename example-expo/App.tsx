@@ -18,7 +18,7 @@ export default function App() {
   const [status, setStatus] = useState('binding endpoint…');
   const [endpointId, setEndpointId] = useState<string | null>(null);
   const [peerId, setPeerId] = useState(
-    '952ebc5e87827afe7a36ac1882ff97fd7361e32f7a6b76f737094a9d132d8aa8'
+    '9bfd156664cadc438cac04be91967dbaaed9ff19e0ba6e274dded33a86cfe773'
   );
   const [echoLog, setEchoLog] = useState<string[]>([]);
   const epRef = useRef<EndpointLike | null>(null);
