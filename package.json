@@ -1,6 +1,6 @@
 {
   "name": "react-native-iroh-ffi",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "description": "React Native bindings for the official iroh-ffi: the full iroh p2p API surface (QUIC connections, streams, relays, discovery) as a prebuilt Turbo Module \u2014 no Rust toolchain required",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
